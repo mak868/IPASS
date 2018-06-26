@@ -1,0 +1,88 @@
+\hypertarget{class_h_c_s_r04}{}\section{H\+C\+S\+R04 Class Reference}
+\label{class_h_c_s_r04}\index{H\+C\+S\+R04@{H\+C\+S\+R04}}
+Inheritance diagram for H\+C\+S\+R04\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_h_c_s_r04}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_h_c_s_r04_a6630d5354ee9fb0abdb70c5dbbb2e130}{H\+C\+S\+R04}} (hwlib\+::target\+::pin\+\_\+out \&trigger, hwlib\+::target\+::pin\+\_\+in \&echo)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_h_c_s_r04}{H\+C\+S\+R04}} sensor class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_h_c_s_r04_aced49671ccc6cf679e045d2fb9709d8c}{get}} ()
+\begin{DoxyCompactList}\small\item\em Get() \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_h_c_s_r04_a6630d5354ee9fb0abdb70c5dbbb2e130}\label{class_h_c_s_r04_a6630d5354ee9fb0abdb70c5dbbb2e130}} 
+\index{H\+C\+S\+R04@{H\+C\+S\+R04}!H\+C\+S\+R04@{H\+C\+S\+R04}}
+\index{H\+C\+S\+R04@{H\+C\+S\+R04}!H\+C\+S\+R04@{H\+C\+S\+R04}}
+\subsubsection{\texorpdfstring{H\+C\+S\+R04()}{HCSR04()}}
+{\footnotesize\ttfamily H\+C\+S\+R04\+::\+H\+C\+S\+R04 (\begin{DoxyParamCaption}\item[{hwlib\+::target\+::pin\+\_\+out \&}]{trigger,  }\item[{hwlib\+::target\+::pin\+\_\+in \&}]{echo }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_h_c_s_r04}{H\+C\+S\+R04}} sensor class. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Theil 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+25-\/06-\/2018 14\+:00
+\end{DoxyDate}
+This class wil read out the H\+C-\/\+S\+R04 Ultrasonic Sensor.~\newline
+ \begin{DoxyPrecond}{Precondition}
+To construct this class will need one output pin and one inputpin !. 
+\end{DoxyPrecond}
+\mbox{\hyperlink{class_h_c_s_r04}{H\+C\+S\+R04}} initialize(exampel) 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} trigger = target::pin\_out(target::pins::d7);
+\textcolor{keyword}{auto} echo    = target::pin\_in(target::pins::d6);
+\mbox{\hyperlink{class_h_c_s_r04}{HCSR04}} sensor2(trigger,echo);
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Warning}
+This class needs hwlib to work. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_h_c_s_r04_aced49671ccc6cf679e045d2fb9709d8c}\label{class_h_c_s_r04_aced49671ccc6cf679e045d2fb9709d8c}} 
+\index{H\+C\+S\+R04@{H\+C\+S\+R04}!get@{get}}
+\index{get@{get}!H\+C\+S\+R04@{H\+C\+S\+R04}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily int H\+C\+S\+R04\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get() 
+
+Getting the distance that calculate of the H\+C-\/\+S\+R04 The distance is in \% calculate of the max distance 150.
+
+\begin{DoxyWarning}{Warning}
+The bigger the distance is the slower the function will response
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+int ~\newline
+ \mbox{\hyperlink{class_h_c_s_r04_aced49671ccc6cf679e045d2fb9709d8c}{H\+C\+S\+R04.\+get()}}
+\end{DoxyReturn}
+\begin{DoxyParagraph}{example}
+
+\begin{DoxyCode}
+sensor2.get();
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+
+
+Implements \mbox{\hyperlink{classcontroler}{controler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+H\+C\+S\+R04.\+hpp\item 
+H\+C\+S\+R04.\+cpp\end{DoxyCompactItemize}

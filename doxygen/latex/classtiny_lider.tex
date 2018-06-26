@@ -1,0 +1,91 @@
+\hypertarget{classtiny_lider}{}\section{tiny\+Lider Class Reference}
+\label{classtiny_lider}\index{tiny\+Lider@{tiny\+Lider}}
+Inheritance diagram for tiny\+Lider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtiny_lider}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtiny_lider_a68b7cd779d6cec28f53a3c4f4c858c11}{tiny\+Lider}} (char slave, hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda \&i2c\+\_\+bus)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classtiny_lider}{tiny\+Lider}} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtiny_lider_ac69b92b0bd4056f6378e7e13aafa57b5}{get}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classtiny_lider_ac69b92b0bd4056f6378e7e13aafa57b5}{get()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtiny_lider_a68b7cd779d6cec28f53a3c4f4c858c11}\label{classtiny_lider_a68b7cd779d6cec28f53a3c4f4c858c11}} 
+\index{tiny\+Lider@{tiny\+Lider}!tiny\+Lider@{tiny\+Lider}}
+\index{tiny\+Lider@{tiny\+Lider}!tiny\+Lider@{tiny\+Lider}}
+\subsubsection{\texorpdfstring{tiny\+Lider()}{tinyLider()}}
+{\footnotesize\ttfamily tiny\+Lider\+::tiny\+Lider (\begin{DoxyParamCaption}\item[{char}]{slave,  }\item[{hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda \&}]{i2c\+\_\+bus }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classtiny_lider}{tiny\+Lider}} 
+
+\begin{DoxyAuthor}{Author}
+Thomas Theil 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24-\/06-\/2018 16\+:00
+\end{DoxyDate}
+This class will read out the tiny\+Lidar module
+
+\begin{DoxyPrecond}{Precondition}
+It needs i2c to read the tinylidar 
+\end{DoxyPrecond}
+\begin{DoxyParagraph}{i2c adress}
+the i2c adress is 0x10. for more information go to \href{https://microedco.s3.amazonaws.com/tinyLiDAR/Documentation/tinyLiDAR%20Reference%20Manual%20rev1.26.pdf}{\tt tiny\+Lidar}
+\end{DoxyParagraph}
+\mbox{\hyperlink{classtiny_lider}{tiny\+Lider}} initialize(example) 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} scl     = target::pin\_oc( target::pins::scl );
+\textcolor{keyword}{auto} sda      = target::pin\_oc( target::pins::sda );
+\textcolor{keyword}{auto} i2c\_bus = hwlib::i2c\_bus\_bit\_banged\_scl\_sda( scl, sda );
+tinylidar sensor1 (0x10 ,i2c\_bus);
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Warning}
+This class needs hwlib to work. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtiny_lider_ac69b92b0bd4056f6378e7e13aafa57b5}\label{classtiny_lider_ac69b92b0bd4056f6378e7e13aafa57b5}} 
+\index{tiny\+Lider@{tiny\+Lider}!get@{get}}
+\index{get@{get}!tiny\+Lider@{tiny\+Lider}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily int tiny\+Lider\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classtiny_lider_ac69b92b0bd4056f6378e7e13aafa57b5}{get()}} 
+
+Get the distance in MM of the tiny\+Lidar
+
+\begin{DoxyParagraph}{Workings}
+The class will get a average of 3 readings.
+\end{DoxyParagraph}
+\mbox{\hyperlink{classtiny_lider}{tiny\+Lider}} initialize(example) 
+\begin{DoxyCode}
+\mbox{\hyperlink{classtiny_lider}{tinyLider}}.\mbox{\hyperlink{classtiny_lider_ac69b92b0bd4056f6378e7e13aafa57b5}{get}}();
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classcontroler}{controler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tiny\+Lidar.\+hpp\item 
+tiny\+Lidar.\+cpp\end{DoxyCompactItemize}

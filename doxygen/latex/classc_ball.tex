@@ -1,0 +1,168 @@
+\hypertarget{classc_ball}{}\section{c\+Ball Class Reference}
+\label{classc_ball}\index{c\+Ball@{c\+Ball}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classc_ball_a26865bcbfe3d50d5e938ec29eec791dd}{c\+Ball}} (int posX, int posY)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classc_ball}{c\+Ball}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classc_ball_a7c7b2cda898f6e1670faa2f753b9c420}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classc_ball_a7c7b2cda898f6e1670faa2f753b9c420}{Reset()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classc_ball_a34a6133cf86c6a333ae9b14eef4d3f99}{change\+Dir}} (int new\+Dir)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classc_ball_a34a6133cf86c6a333ae9b14eef4d3f99}{change\+Dir()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classc_ball_a65fd252361fa42fbe843a3cc73f2ebdb}{ramdomdir}} (char treshold\+Left=3, char treshold\+Right=1)
+\begin{DoxyCompactList}\small\item\em ramdomdir(char tresholdleft, treshold\+Right) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classc_ball_acbdd0fa42ab6efd934d4966f3bf2e411}{update}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classc_ball_acbdd0fa42ab6efd934d4966f3bf2e411}{update()}} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classc_ball_a6216240ba8780e2510c2d2eb5c792be0}{getX}} ()
+\begin{DoxyCompactList}\small\item\em int \mbox{\hyperlink{classc_ball_a6216240ba8780e2510c2d2eb5c792be0}{get\+X()}} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classc_ball_a4439db1ba25e8f69fde4fdf0fa1b4f24}{getY}} ()
+\begin{DoxyCompactList}\small\item\em int \mbox{\hyperlink{classc_ball_a4439db1ba25e8f69fde4fdf0fa1b4f24}{get\+Y()}} \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classc_ball_aabb4c1b801ca98f18461f0abebd22e41}{get\+Dir}} ()
+\begin{DoxyCompactList}\small\item\em int \mbox{\hyperlink{classc_ball_a4439db1ba25e8f69fde4fdf0fa1b4f24}{get\+Y()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classc_ball_a26865bcbfe3d50d5e938ec29eec791dd}\label{classc_ball_a26865bcbfe3d50d5e938ec29eec791dd}} 
+\index{c\+Ball@{c\+Ball}!c\+Ball@{c\+Ball}}
+\index{c\+Ball@{c\+Ball}!c\+Ball@{c\+Ball}}
+\subsubsection{\texorpdfstring{c\+Ball()}{cBall()}}
+{\footnotesize\ttfamily c\+Ball\+::c\+Ball (\begin{DoxyParamCaption}\item[{int}]{posX,  }\item[{int}]{posY }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classc_ball}{c\+Ball}} 
+
+\begin{DoxyAuthor}{Author}
+Thomas Theil 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+25-\/06-\/2018 15\+:00
+\end{DoxyDate}
+This class controlles a ball of the game pong
+
+\mbox{\hyperlink{classc_ball}{c\+Ball}} initialize(example) 
+\begin{DoxyCode}
+\mbox{\hyperlink{classc_ball}{cBall}} ball(x,y);
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classc_ball_a34a6133cf86c6a333ae9b14eef4d3f99}\label{classc_ball_a34a6133cf86c6a333ae9b14eef4d3f99}} 
+\index{c\+Ball@{c\+Ball}!change\+Dir@{change\+Dir}}
+\index{change\+Dir@{change\+Dir}!c\+Ball@{c\+Ball}}
+\subsubsection{\texorpdfstring{change\+Dir()}{changeDir()}}
+{\footnotesize\ttfamily void c\+Ball\+::change\+Dir (\begin{DoxyParamCaption}\item[{int}]{new\+Dir }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classc_ball_a34a6133cf86c6a333ae9b14eef4d3f99}{change\+Dir()}} 
+
+changing the directon of the ball
+
+\begin{DoxyParagraph}{Posible directions}
+{\bfseries 0} stop ~\newline
+ {\bfseries 1} left ~\newline
+ {\bfseries 2} upleft ~\newline
+ {\bfseries 3} downleft ~\newline
+ {\bfseries 4} right ~\newline
+ {\bfseries 5} upright ~\newline
+ {\bfseries 6} downright ~\newline
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classc_ball_aabb4c1b801ca98f18461f0abebd22e41}\label{classc_ball_aabb4c1b801ca98f18461f0abebd22e41}} 
+\index{c\+Ball@{c\+Ball}!get\+Dir@{get\+Dir}}
+\index{get\+Dir@{get\+Dir}!c\+Ball@{c\+Ball}}
+\subsubsection{\texorpdfstring{get\+Dir()}{getDir()}}
+{\footnotesize\ttfamily int c\+Ball\+::get\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+int \mbox{\hyperlink{classc_ball_a4439db1ba25e8f69fde4fdf0fa1b4f24}{get\+Y()}} 
+
+get the ball direction for with the ball is traveling in ~\newline
+see \mbox{\hyperlink{classc_ball_a34a6133cf86c6a333ae9b14eef4d3f99}{change\+Dir()}} for the meaning of the directions.
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classc_ball_a6216240ba8780e2510c2d2eb5c792be0}\label{classc_ball_a6216240ba8780e2510c2d2eb5c792be0}} 
+\index{c\+Ball@{c\+Ball}!getX@{getX}}
+\index{getX@{getX}!c\+Ball@{c\+Ball}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily int c\+Ball\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+int \mbox{\hyperlink{classc_ball_a6216240ba8780e2510c2d2eb5c792be0}{get\+X()}} 
+
+get the ball it X axis
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classc_ball_a4439db1ba25e8f69fde4fdf0fa1b4f24}\label{classc_ball_a4439db1ba25e8f69fde4fdf0fa1b4f24}} 
+\index{c\+Ball@{c\+Ball}!getY@{getY}}
+\index{getY@{getY}!c\+Ball@{c\+Ball}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily int c\+Ball\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+int \mbox{\hyperlink{classc_ball_a4439db1ba25e8f69fde4fdf0fa1b4f24}{get\+Y()}} 
+
+get the ball it Y axis
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classc_ball_a65fd252361fa42fbe843a3cc73f2ebdb}\label{classc_ball_a65fd252361fa42fbe843a3cc73f2ebdb}} 
+\index{c\+Ball@{c\+Ball}!ramdomdir@{ramdomdir}}
+\index{ramdomdir@{ramdomdir}!c\+Ball@{c\+Ball}}
+\subsubsection{\texorpdfstring{ramdomdir()}{ramdomdir()}}
+{\footnotesize\ttfamily void c\+Ball\+::ramdomdir (\begin{DoxyParamCaption}\item[{char}]{treshold\+Left = {\ttfamily 3},  }\item[{char}]{treshold\+Right = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+ramdomdir(char tresholdleft, treshold\+Right) 
+
+changing to a ramdom direction left or right. 1 a ramdom direction to the left 2 a ramdom direction to the right
+
+\begin{DoxyParagraph}{example}
+
+\begin{DoxyCode}
+ball.ramdomdir(\textcolor{keywordtype}{char} dir);
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{classc_ball_a7c7b2cda898f6e1670faa2f753b9c420}\label{classc_ball_a7c7b2cda898f6e1670faa2f753b9c420}} 
+\index{c\+Ball@{c\+Ball}!Reset@{Reset}}
+\index{Reset@{Reset}!c\+Ball@{c\+Ball}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void c\+Ball\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classc_ball_a7c7b2cda898f6e1670faa2f753b9c420}{Reset()}} 
+
+It will reset the ball to its starting position
+
+(example) 
+\begin{DoxyCode}
+ball.Reset();
+\end{DoxyCode}
+ \mbox{\Hypertarget{classc_ball_acbdd0fa42ab6efd934d4966f3bf2e411}\label{classc_ball_acbdd0fa42ab6efd934d4966f3bf2e411}} 
+\index{c\+Ball@{c\+Ball}!update@{update}}
+\index{update@{update}!c\+Ball@{c\+Ball}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void c\+Ball\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classc_ball_acbdd0fa42ab6efd934d4966f3bf2e411}{update()}} 
+
+updating the position of the ball 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+c\+Ball.\+hpp\item 
+c\+Ball.\+cpp\end{DoxyCompactItemize}

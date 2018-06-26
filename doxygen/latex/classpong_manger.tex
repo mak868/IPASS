@@ -1,0 +1,95 @@
+\hypertarget{classpong_manger}{}\section{pong\+Manger Class Reference}
+\label{classpong_manger}\index{pong\+Manger@{pong\+Manger}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpong_manger_a757b4d3c1ace0490604e4f93da6b5a04}{pong\+Manger}} (hwlib\+::glcd\+\_\+oled \&oled, \mbox{\hyperlink{classc_ball}{c\+Ball}} \&ball, \mbox{\hyperlink{classc_paddel}{c\+Paddel}} \&player1, \mbox{\hyperlink{classc_paddel}{c\+Paddel}} \&player2, \mbox{\hyperlink{classpiezo}{piezo}} \&sound)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classpong_manger_a757b4d3c1ace0490604e4f93da6b5a04}{pong\+Manger(hwlib\+::glcd\+\_\+oled  \& oled, c\+Ball \& ball, c\+Paddel \& player1, c\+Paddel \& player2, piezo \& sound)}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpong_manger_a2c2c6e7f024261d5b3e3f4b85abb060a}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classpong_manger_a2c2c6e7f024261d5b3e3f4b85abb060a}{Draw()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpong_manger_a878b50d69f98eb0de013269fbf9b0ead}{Update}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classpong_manger_a878b50d69f98eb0de013269fbf9b0ead}{Update()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpong_manger_a177da6a9f5120dc153b8f33d8e6bebc3}{collision}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classpong_manger_a177da6a9f5120dc153b8f33d8e6bebc3}{collision()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpong_manger_a757b4d3c1ace0490604e4f93da6b5a04}\label{classpong_manger_a757b4d3c1ace0490604e4f93da6b5a04}} 
+\index{pong\+Manger@{pong\+Manger}!pong\+Manger@{pong\+Manger}}
+\index{pong\+Manger@{pong\+Manger}!pong\+Manger@{pong\+Manger}}
+\subsubsection{\texorpdfstring{pong\+Manger()}{pongManger()}}
+{\footnotesize\ttfamily pong\+Manger\+::pong\+Manger (\begin{DoxyParamCaption}\item[{hwlib\+::glcd\+\_\+oled \&}]{oled,  }\item[{\mbox{\hyperlink{classc_ball}{c\+Ball}} \&}]{ball,  }\item[{\mbox{\hyperlink{classc_paddel}{c\+Paddel}} \&}]{player1,  }\item[{\mbox{\hyperlink{classc_paddel}{c\+Paddel}} \&}]{player2,  }\item[{\mbox{\hyperlink{classpiezo}{piezo}} \&}]{sound }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classpong_manger_a757b4d3c1ace0490604e4f93da6b5a04}{pong\+Manger(hwlib\+::glcd\+\_\+oled  \& oled, c\+Ball \& ball, c\+Paddel \& player1, c\+Paddel \& player2, piezo \& sound)}}. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Theil 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+25-\/06-\/2018 21\+:30
+\end{DoxyDate}
+The pong game class ~\newline
+The class wil controle the pong game
+
+\begin{DoxyPrecond}{Precondition}
+hwlib a must to run this 
+\end{DoxyPrecond}
+\mbox{\hyperlink{classpong_manger}{pong\+Manger(exampel)}} 
+\begin{DoxyCode}
+\mbox{\hyperlink{classc_ball}{cBall}} ball(64,32);
+\mbox{\hyperlink{classc_paddel}{cPaddel}} player1(1,0,controler1);
+\mbox{\hyperlink{classc_paddel}{cPaddel}} player2(127,0,controler1);
+
+\mbox{\hyperlink{classpong_manger}{pongManger}} pong(oled,ball,player1,player2,buzzer);
+\textcolor{keywordflow}{while}(1)\{
+    pong.Update();
+    pong.Draw();
+
+\}
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpong_manger_a177da6a9f5120dc153b8f33d8e6bebc3}\label{classpong_manger_a177da6a9f5120dc153b8f33d8e6bebc3}} 
+\index{pong\+Manger@{pong\+Manger}!collision@{collision}}
+\index{collision@{collision}!pong\+Manger@{pong\+Manger}}
+\subsubsection{\texorpdfstring{collision()}{collision()}}
+{\footnotesize\ttfamily void pong\+Manger\+::collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classpong_manger_a177da6a9f5120dc153b8f33d8e6bebc3}{collision()}} 
+
+This function will check if there hase been any colission with the object. ~\newline
+when a collision is detected a sound wil play out of the piezo speaker ~\newline
+~\newline
+if the bal reaches one side the game wil end and a sound will play~\newline
+the game will restart on its own \mbox{\Hypertarget{classpong_manger_a2c2c6e7f024261d5b3e3f4b85abb060a}\label{classpong_manger_a2c2c6e7f024261d5b3e3f4b85abb060a}} 
+\index{pong\+Manger@{pong\+Manger}!Draw@{Draw}}
+\index{Draw@{Draw}!pong\+Manger@{pong\+Manger}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void pong\+Manger\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classpong_manger_a2c2c6e7f024261d5b3e3f4b85abb060a}{Draw()}} 
+
+Will draw to the conected oled screen \mbox{\Hypertarget{classpong_manger_a878b50d69f98eb0de013269fbf9b0ead}\label{classpong_manger_a878b50d69f98eb0de013269fbf9b0ead}} 
+\index{pong\+Manger@{pong\+Manger}!Update@{Update}}
+\index{Update@{Update}!pong\+Manger@{pong\+Manger}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void pong\+Manger\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classpong_manger_a878b50d69f98eb0de013269fbf9b0ead}{Update()}} 
+
+Update\textquotesingle{}s the position of all the objects. ~\newline
+It wil also run a \mbox{\hyperlink{classpong_manger_a177da6a9f5120dc153b8f33d8e6bebc3}{collision()}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+pong\+Manger.\+hpp\item 
+pong\+Manger.\+cpp\end{DoxyCompactItemize}

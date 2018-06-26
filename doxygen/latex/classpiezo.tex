@@ -1,0 +1,131 @@
+\hypertarget{classpiezo}{}\section{piezo Class Reference}
+\label{classpiezo}\index{piezo@{piezo}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpiezo_aa7daa7fd80b5580bd2c5e379a69ffdc4}{piezo}} (hwlib\+::target\+::pin\+\_\+out \&output)
+\begin{DoxyCompactList}\small\item\em Piezo buzzer class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpiezo_ac14361f4fb7fe063b8c4455946220ee4}{tone}} (unsigned int tone, int duration)
+\begin{DoxyCompactList}\small\item\em Tone. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classpiezo_a4e92d8bc5b101f9862a089134518c55f}{song}} (int notes\mbox{[}$\,$\mbox{]}, int duration\mbox{[}$\,$\mbox{]}, int lenght)
+\begin{DoxyCompactList}\small\item\em song \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpiezo_aa7daa7fd80b5580bd2c5e379a69ffdc4}\label{classpiezo_aa7daa7fd80b5580bd2c5e379a69ffdc4}} 
+\index{piezo@{piezo}!piezo@{piezo}}
+\index{piezo@{piezo}!piezo@{piezo}}
+\subsubsection{\texorpdfstring{piezo()}{piezo()}}
+{\footnotesize\ttfamily piezo\+::piezo (\begin{DoxyParamCaption}\item[{hwlib\+::target\+::pin\+\_\+out \&}]{output }\end{DoxyParamCaption})}
+
+
+
+Piezo buzzer class. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Theil 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+25-\/06-\/2018 15\+:30
+\end{DoxyDate}
+This class wil output a sound over a piezo buzzer. ~\newline
+ \begin{DoxyPrecond}{Precondition}
+To construct this class will need a output pin. 
+\end{DoxyPrecond}
+Piezo initialize 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} buzzerPin  = target::pin\_out(target::pins::d5);
+\mbox{\hyperlink{classpiezo}{piezo}} buzzer(buzzerPin);
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Warning}
+This class requers hwlib to work. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpiezo_a4e92d8bc5b101f9862a089134518c55f}\label{classpiezo_a4e92d8bc5b101f9862a089134518c55f}} 
+\index{piezo@{piezo}!song@{song}}
+\index{song@{song}!piezo@{piezo}}
+\subsubsection{\texorpdfstring{song()}{song()}}
+{\footnotesize\ttfamily void piezo\+::song (\begin{DoxyParamCaption}\item[{int}]{notes\mbox{[}$\,$\mbox{]},  }\item[{int}]{duration\mbox{[}$\,$\mbox{]},  }\item[{int}]{lenght }\end{DoxyParamCaption})}
+
+
+
+song 
+
+will play the song you made juses \mbox{\hyperlink{classpiezo_ac14361f4fb7fe063b8c4455946220ee4}{tone()}} as base
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & notes\mbox{[}\mbox{]} (Array of all the notes that will be played) ~\newline
+ input can be your own note or one of the Preloaded \mbox{\hyperlink{classpiezo_ac14361f4fb7fe063b8c4455946220ee4}{tone()}}. \\
+\hline
+{\em int} & duration \mbox{[}\mbox{]} (Array of all the lenghs that the notes will play for) \\
+\hline
+{\em int} & lenght (The lenght of the input arrays)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{example}
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{char}  notes[8]  = \{\textcolor{charliteral}{'c'},\textcolor{charliteral}{'d'},\textcolor{charliteral}{'e'},\textcolor{charliteral}{'f'},\textcolor{charliteral}{'g'},\textcolor{charliteral}{'a'},\textcolor{charliteral}{'b'},\textcolor{charliteral}{'C'}\};
+\textcolor{keywordtype}{int}  lenght[8] = \{300,300,300,300,300,300,300,300\};
+buzzer.song(notes,lenght,8);
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpiezo_ac14361f4fb7fe063b8c4455946220ee4}\label{classpiezo_ac14361f4fb7fe063b8c4455946220ee4}} 
+\index{piezo@{piezo}!tone@{tone}}
+\index{tone@{tone}!piezo@{piezo}}
+\subsubsection{\texorpdfstring{tone()}{tone()}}
+{\footnotesize\ttfamily void piezo\+::tone (\begin{DoxyParamCaption}\item[{unsigned int}]{tone,  }\item[{int}]{duration }\end{DoxyParamCaption})}
+
+
+
+Tone. 
+
+It will ouput a tone over the piezo buzzer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em char} & tone (The tone that will be will sound) ~\newline
+ input can be your own note or one of the Preloaded \\
+\hline
+{\em int} & duration (The miliseconds the tone will sound for)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Preloaded notes}
+{\bfseries c} 262\+Hz ~\newline
+ {\bfseries d} 294\+Hz ~\newline
+ {\bfseries e} 330\+Hz ~\newline
+ {\bfseries f} 349\+Hz ~\newline
+ {\bfseries g} 392\+Hz ~\newline
+ {\bfseries a} 440\+Hz ~\newline
+ {\bfseries b} 494\+Hz ~\newline
+ {\bfseries C} 523\+Hz ~\newline
+ 
+\end{DoxyParagraph}
+\begin{DoxyWarning}{Warning}
+duration of 0 stil result in a sound
+\end{DoxyWarning}
+\begin{DoxyParagraph}{example}
+
+\begin{DoxyCode}
+buzzer.tone(\textcolor{charliteral}{'a'},1000);
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+piezo.\+hpp\item 
+piezo.\+cpp\end{DoxyCompactItemize}

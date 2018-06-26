@@ -1,0 +1,89 @@
+\hypertarget{class_g_y61}{}\section{G\+Y61 Class Reference}
+\label{class_g_y61}\index{G\+Y61@{G\+Y61}}
+Inheritance diagram for G\+Y61\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_g_y61}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_y61_a2599179d0c2c4c26e87aab76ab6ee410}{G\+Y61}} (\mbox{\hyperlink{class_y_l40}{Y\+L40}} \&A\+D\+Ci2, char axis)
+\begin{DoxyCompactList}\small\item\em G\+Y-\/61 chip. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_g_y61_a3163809be7dd33dc0c46ba503b55394a}{get}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_g_y61_a3163809be7dd33dc0c46ba503b55394a}{get()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_y61_a40d6e29cc3b8a0701689f868cc82ee1f}\label{class_g_y61_a40d6e29cc3b8a0701689f868cc82ee1f}} 
+\mbox{\hyperlink{class_y_l40}{Y\+L40}} \& {\bfseries A\+D\+Ci2}
+\item 
+\mbox{\Hypertarget{class_g_y61_a0f96ea841bdcf07771c613bf16be6bb9}\label{class_g_y61_a0f96ea841bdcf07771c613bf16be6bb9}} 
+char {\bfseries axis} = 0
+\item 
+\mbox{\Hypertarget{class_g_y61_adc2d00c3ffff2985240cad4808422e0b}\label{class_g_y61_adc2d00c3ffff2985240cad4808422e0b}} 
+int {\bfseries base}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_g_y61_a2599179d0c2c4c26e87aab76ab6ee410}\label{class_g_y61_a2599179d0c2c4c26e87aab76ab6ee410}} 
+\index{G\+Y61@{G\+Y61}!G\+Y61@{G\+Y61}}
+\index{G\+Y61@{G\+Y61}!G\+Y61@{G\+Y61}}
+\subsubsection{\texorpdfstring{G\+Y61()}{GY61()}}
+{\footnotesize\ttfamily G\+Y61\+::\+G\+Y61 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_y_l40}{Y\+L40}} \&}]{A\+D\+Ci2,  }\item[{char}]{axis }\end{DoxyParamCaption})}
+
+
+
+G\+Y-\/61 chip. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Theil 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+26-\/06-\/2018 15\+:00
+\end{DoxyDate}
+read out the G\+Y-\/61 chip using tha Y\+L-\/40 for more information loop at \mbox{\hyperlink{class_y_l40}{Y\+L40()}}
+
+\begin{DoxyPrecond}{Precondition}
+This class uses \mbox{\hyperlink{class_y_l40}{Y\+L40}} for its workings 
+\end{DoxyPrecond}
+potmeter initialize(exampel) 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} scl     = target::pin\_oc( target::pins::scl );
+\textcolor{keyword}{auto} sda      = target::pin\_oc( target::pins::sda );
+\textcolor{keyword}{auto} i2c\_bus = hwlib::i2c\_bus\_bit\_banged\_scl\_sda( scl, sda );
+\mbox{\hyperlink{class_y_l40}{YL40}} ADCi2(i2c\_bus, 0x48);
+\mbox{\hyperlink{class_g_y61}{GY61}} controler2(ADCi2);
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Warning}
+This class needs hwlib and \mbox{\hyperlink{class_y_l40}{Y\+L40}} to work. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_y61_a3163809be7dd33dc0c46ba503b55394a}\label{class_g_y61_a3163809be7dd33dc0c46ba503b55394a}} 
+\index{G\+Y61@{G\+Y61}!get@{get}}
+\index{get@{get}!G\+Y61@{G\+Y61}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily int G\+Y61\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_g_y61_a3163809be7dd33dc0c46ba503b55394a}{get()}} 
+
+Get the output of the A/D
+
+returns int 
+
+Implements \mbox{\hyperlink{classcontroler}{controler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+G\+Y61.\+hpp\item 
+G\+Y61.\+cpp\end{DoxyCompactItemize}

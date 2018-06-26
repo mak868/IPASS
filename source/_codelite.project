@@ -29,6 +29,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="source">
+    <File Name="mainpage.dox"/>
     <File Name="potmeter.cpp"/>
     <File Name="potmeter.hpp"/>
     <File Name="GY61.cpp"/>

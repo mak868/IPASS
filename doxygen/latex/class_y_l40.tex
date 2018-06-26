@@ -1,0 +1,108 @@
+\hypertarget{class_y_l40}{}\section{Y\+L40 Class Reference}
+\label{class_y_l40}\index{Y\+L40@{Y\+L40}}
+Inheritance diagram for Y\+L40\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_y_l40}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_y_l40_a5cbc98cfd60b1d4fd489dfa79254fd33}{Y\+L40}} (hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda \&i2c\+\_\+bus, char slave)
+\begin{DoxyCompactList}\small\item\em Y\+L-\/40 A\+D\+C/\+D\+AC chip. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_y_l40_a3e0322c2c8c8dfed7466056173bc563e}{get}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_y_l40_a3e0322c2c8c8dfed7466056173bc563e}{get()}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_y_l40_a97593c0f3ab5284c2a1258ed81f32d96}{changreadout}} (char pin)
+\begin{DoxyCompactList}\small\item\em changereadout(char pin) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_y_l40_aec31472494c65121f87be43d9a12878e}\label{class_y_l40_aec31472494c65121f87be43d9a12878e}} 
+void {\bfseries wirte} ()
+\item 
+\mbox{\Hypertarget{class_y_l40_a2f1f0be24016335020ff75ff36b5693f}\label{class_y_l40_a2f1f0be24016335020ff75ff36b5693f}} 
+void {\bfseries singe\+Wave} (char wave\+Type, int duration)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_y_l40_a5cbc98cfd60b1d4fd489dfa79254fd33}\label{class_y_l40_a5cbc98cfd60b1d4fd489dfa79254fd33}} 
+\index{Y\+L40@{Y\+L40}!Y\+L40@{Y\+L40}}
+\index{Y\+L40@{Y\+L40}!Y\+L40@{Y\+L40}}
+\subsubsection{\texorpdfstring{Y\+L40()}{YL40()}}
+{\footnotesize\ttfamily Y\+L40\+::\+Y\+L40 (\begin{DoxyParamCaption}\item[{hwlib\+::i2c\+\_\+bus\+\_\+bit\+\_\+banged\+\_\+scl\+\_\+sda \&}]{i2c\+\_\+bus,  }\item[{char}]{slave }\end{DoxyParamCaption})}
+
+
+
+Y\+L-\/40 A\+D\+C/\+D\+AC chip. 
+
+\begin{DoxyAuthor}{Author}
+Thomas Theil 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+26-\/06-\/2018 14\+:00
+\end{DoxyDate}
+This class controles the Y\+L-\/40 board using the P\+C\+F8591 chip. ~\newline
+The P\+C\+F891 chip is a A/D and D/A converter controled via I2C. ~\newline
+for the data sheet folow \href{https://www.aurel32.net/elec/pcf8591.pdf}{\tt This} link. After boot the chip wil auto read Analog in 0
+
+\begin{DoxyParagraph}{i2c adress}
+the i2c adress is 0x48.
+\end{DoxyParagraph}
+\begin{DoxyPrecond}{Precondition}
+This chips needs a hwlib i2c to work 
+\end{DoxyPrecond}
+Y\+L-\/40 initialize(exampel) 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} scl     = target::pin\_oc( target::pins::scl );
+\textcolor{keyword}{auto} sda      = target::pin\_oc( target::pins::sda );
+\textcolor{keyword}{auto} i2c\_bus = hwlib::i2c\_bus\_bit\_banged\_scl\_sda( scl, sda );
+\mbox{\hyperlink{class_y_l40}{YL40}} ADCi2(i2c\_bus, 0x48);
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Warning}
+This class needs hwlib to work. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_y_l40_a97593c0f3ab5284c2a1258ed81f32d96}\label{class_y_l40_a97593c0f3ab5284c2a1258ed81f32d96}} 
+\index{Y\+L40@{Y\+L40}!changreadout@{changreadout}}
+\index{changreadout@{changreadout}!Y\+L40@{Y\+L40}}
+\subsubsection{\texorpdfstring{changreadout()}{changreadout()}}
+{\footnotesize\ttfamily void Y\+L40\+::changreadout (\begin{DoxyParamCaption}\item[{char}]{pin }\end{DoxyParamCaption})}
+
+
+
+changereadout(char pin) 
+
+This function changes the read out pin of the chip
+
+\begin{DoxyParagraph}{Pins}
+{\bfseries A\+I\+N0} 0 ~\newline
+ {\bfseries A\+I\+N1} 1 ~\newline
+ {\bfseries A\+I\+N2} 2 ~\newline
+ {\bfseries A\+I\+N3} 3 ~\newline
+
+\end{DoxyParagraph}
+\mbox{\Hypertarget{class_y_l40_a3e0322c2c8c8dfed7466056173bc563e}\label{class_y_l40_a3e0322c2c8c8dfed7466056173bc563e}} 
+\index{Y\+L40@{Y\+L40}!get@{get}}
+\index{get@{get}!Y\+L40@{Y\+L40}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily int Y\+L40\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_y_l40_a3e0322c2c8c8dfed7466056173bc563e}{get()}} 
+
+Get the output of the A/D
+
+returns int 
+
+Implements \mbox{\hyperlink{classcontroler}{controler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Y\+L40.\+hpp\item 
+Y\+L40.\+cpp\end{DoxyCompactItemize}

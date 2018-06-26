@@ -1,0 +1,83 @@
+\hypertarget{classpotmeter}{}\section{potmeter Class Reference}
+\label{classpotmeter}\index{potmeter@{potmeter}}
+Inheritance diagram for potmeter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classpotmeter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpotmeter_a30949c70814bb0cd26d8bb043529ce59}{potmeter}} (\mbox{\hyperlink{class_y_l40}{Y\+L40}} \&A\+D\+Ci2)
+\begin{DoxyCompactList}\small\item\em potmeter readout \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classpotmeter_a9184480674fac846504a03a77036dd71}{get}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classpotmeter_a9184480674fac846504a03a77036dd71}{get()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpotmeter_af61db45fd919db8beabc841c800d3e1c}\label{classpotmeter_af61db45fd919db8beabc841c800d3e1c}} 
+\mbox{\hyperlink{class_y_l40}{Y\+L40}} \& {\bfseries A\+D\+Ci2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classpotmeter_a30949c70814bb0cd26d8bb043529ce59}\label{classpotmeter_a30949c70814bb0cd26d8bb043529ce59}} 
+\index{potmeter@{potmeter}!potmeter@{potmeter}}
+\index{potmeter@{potmeter}!potmeter@{potmeter}}
+\subsubsection{\texorpdfstring{potmeter()}{potmeter()}}
+{\footnotesize\ttfamily potmeter\+::potmeter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_y_l40}{Y\+L40}} \&}]{A\+D\+Ci2 }\end{DoxyParamCaption})}
+
+
+
+potmeter readout 
+
+\begin{DoxyAuthor}{Author}
+Thomas Theil 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+26-\/06-\/2018 14\+:30
+\end{DoxyDate}
+read out the potmeter using tha \mbox{\hyperlink{class_y_l40}{Y\+L40}} for more information loop at \mbox{\hyperlink{class_y_l40}{Y\+L40()}}
+
+\begin{DoxyPrecond}{Precondition}
+This class uses \mbox{\hyperlink{class_y_l40}{Y\+L40}} for its workings 
+\end{DoxyPrecond}
+potmeter initialize(exampel) 
+\begin{DoxyCode}
+\textcolor{keyword}{auto} scl     = target::pin\_oc( target::pins::scl );
+\textcolor{keyword}{auto} sda      = target::pin\_oc( target::pins::sda );
+\textcolor{keyword}{auto} i2c\_bus = hwlib::i2c\_bus\_bit\_banged\_scl\_sda( scl, sda );
+\mbox{\hyperlink{class_y_l40}{YL40}} ADCi2(i2c\_bus, 0x48);
+\mbox{\hyperlink{classpotmeter}{potmeter}} controler2(ADCi2);
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Warning}
+This class needs hwlib and \mbox{\hyperlink{class_y_l40}{Y\+L40}} to work. 
+\end{DoxyWarning}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classpotmeter_a9184480674fac846504a03a77036dd71}\label{classpotmeter_a9184480674fac846504a03a77036dd71}} 
+\index{potmeter@{potmeter}!get@{get}}
+\index{get@{get}!potmeter@{potmeter}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily int potmeter\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classpotmeter_a9184480674fac846504a03a77036dd71}{get()}} 
+
+Get the output of the A/D
+
+returns int 
+
+Implements \mbox{\hyperlink{classcontroler}{controler}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+potmeter.\+hpp\item 
+potmeter.\+cpp\end{DoxyCompactItemize}

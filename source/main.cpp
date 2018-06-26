@@ -1,3 +1,14 @@
+/// 
+/// @author Thomas Theil
+/// @date 25-06-2018 14:00
+/// @brief IPASS pong project
+/// @details
+/// This project is a end of the year school project. \n
+/// the project will run on a Arduino DUE
+/// \n \n
+/// with a number of sensor as input
+
+
 #include "hwlib.hpp"
 #include "tinyLidar.hpp"
 #include "HCSR04.hpp"
