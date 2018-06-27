@@ -12,7 +12,7 @@ public:
         char axis = 0;
         int  base;
 public:
-    GY61(YL40 & ADCi2, char axis );
+    GY61(YL40 & ADCi2, char axis = 0);
     int get();
 
 };

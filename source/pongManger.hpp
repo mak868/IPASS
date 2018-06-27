@@ -11,7 +11,7 @@ class pongManger
 {
 private:
             //display
-        hwlib::glcd_oled  & display;
+        hwlib::glcd_oled_buffered  & display;
         //object
         cBall & ball;
         cPaddel & player1;
@@ -30,7 +30,7 @@ private:
 
         
     public:
-        pongManger(hwlib::glcd_oled  & oled, cBall & ball, cPaddel & player1, cPaddel & player2, piezo & sound);
+        pongManger(hwlib::glcd_oled_buffered  & oled, cBall & ball, cPaddel & player1, cPaddel & player2, piezo & sound);
         
         
         void Draw();

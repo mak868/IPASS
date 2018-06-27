@@ -4,5 +4,5 @@ var searchData=
   ['getdir',['getDir',['../classc_ball.html#aabb4c1b801ca98f18461f0abebd22e41',1,'cBall']]],
   ['getx',['getX',['../classc_ball.html#a6216240ba8780e2510c2d2eb5c792be0',1,'cBall::getX()'],['../classc_paddel.html#aaa833a367eab3cc275d7b67b4c3b68e4',1,'cPaddel::getX()']]],
   ['gety',['getY',['../classc_ball.html#a4439db1ba25e8f69fde4fdf0fa1b4f24',1,'cBall::getY()'],['../classc_paddel.html#a96cd3a3c7f5678b7e5f8f4eaca271ba2',1,'cPaddel::getY()']]],
-  ['gy61',['GY61',['../class_g_y61.html#a2599179d0c2c4c26e87aab76ab6ee410',1,'GY61']]]
+  ['gy61',['GY61',['../class_g_y61.html#a18b9202457ceaa7187b2b85032970119',1,'GY61']]]
 ];

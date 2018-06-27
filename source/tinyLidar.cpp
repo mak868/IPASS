@@ -25,7 +25,9 @@
 tinyLider::tinyLider(char  slave , hwlib::i2c_bus_bit_banged_scl_sda & i2c_bus):
             slave_1(slave),
             i2c_bus(i2c_bus)
-{}  
+{
+    i2c_bus.write(0x10, handshake_init, 1);
+}  
 
 /// @brief distance()
 /// @details
@@ -37,7 +39,7 @@ int tinyLider::distance(){
     i2c_bus.write(0x10, handshake_init, 1);
     i2c_bus.read(0x10, read_register , 2); 
     
-    hwlib::wait_ms(10);
+    //hwlib::wait_ms(10);
     return read_register[1];
 }
 
@@ -57,5 +59,6 @@ int tinyLider::distance(){
 /// @returns int 
 
 int tinyLider::get(){
-    return (distance()+distance()+distance())/3;
+    
+    return this->distance()/(255/100);
 }

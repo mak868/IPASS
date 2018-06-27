@@ -10,21 +10,25 @@
 
 
 #include "hwlib.hpp"
-#include "tinyLidar.hpp"
-#include "HCSR04.hpp"
 #include "piezo.hpp"
-#include "cBall.hpp"
-#include "cPaddel.hpp"
-#include "controler.hpp"
 #include "pongManger.hpp"
+
+// sensors
 #include "YL40.hpp"
 #include "GY61.hpp"
 #include "potmeter.hpp"
+#include "tinyLidar.hpp"
+#include "HCSR04.hpp"
+
 #include <stdlib.h>     
 
 int main(int argc, char **argv)
 {
-    srand(hwlib::now_ticks());
+    
+       // kill the watchdog
+    WDT->WDT_MR = WDT_MR_WDDIS;
+    
+
     namespace target = hwlib::target;
     auto scl     = target::pin_oc( target::pins::scl );
     auto sda      = target::pin_oc( target::pins::sda );
@@ -32,47 +36,33 @@ int main(int argc, char **argv)
     
     auto trigger = target::pin_out(target::pins::d7);
     auto echo    = target::pin_in(target::pins::d6);
-    
-    auto adc   = target::pin_in(target::pins::a1);
+    auto buzzerPin  = target::pin_out(target::pins::d5);   
 
-    
-    auto buzzerPin  = target::pin_out(target::pins::d5);
+    auto oled = hwlib::glcd_oled_buffered( i2c_bus, 0x3c ); 
+   
     piezo buzzer(buzzerPin);
      
-    auto oled = hwlib::glcd_oled( i2c_bus, 0x3c );  
+    //create controlers
     YL40 ADCi2(i2c_bus, 0x48);
+    //tinyLider controler2(0x10,i2c_bus);
     potmeter controler2(ADCi2);
-
+    //GY61 controler2(ADCi2);    // aceloromter
     HCSR04 controler1(trigger, echo);
  
- 
+    //create main objects
     cBall ball(64,32);
     cPaddel player1(1,0,controler1);
     cPaddel player2(127,0,controler2);
     
+    //start the game
     pongManger pong(oled,ball,player1,player2,buzzer);
     
-      
 
-    pong.Draw();
+
     while(1){
-
         pong.Update();
         pong.Draw();
-        
-       
-    }
-    
-/*
-    piezo buzzer(buzzerPin);
-    int  notes[8]  = {'c','d','e','f','g','a','b','C'};
-    int  lenght[8] = {300,300,300,300,300,300,300,300};
-    for(int i = 0; i < 7;i++){
-        buzzer.song(notes,lenght,8);
-        hwlib::wait_ms(2000);
-    }
-*/
-    
+    }    
 }
 
 

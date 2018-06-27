@@ -13,7 +13,7 @@ private:
     cBall(int posX, int posY);
     void Reset();
     void changeDir(int newDir);
-    void ramdomdir(char tresholdLeft = 3, char tresholdRight = 1);
+    void ramdomdir(char range = 6, char mini = 1);
     
     void update();
     

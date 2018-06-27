@@ -61,7 +61,7 @@ void piezo::tone(unsigned int tone, int duration )
 /// @brief song
 /// 
 /// will play the song you made
-/// juses @ref tone() as base
+/// youse @ref tone() as base
 ///
 /// @param int notes[]    (Array of all the notes that will be played) 
 ///        \n input can be your own note or one of the Preloaded \ref tone(). 

@@ -44,14 +44,18 @@ int  HCSR04::get(){
     trigger.set(1);
     hwlib::wait_ms(10);
     trigger.set(0);
+    int i = 0; //secure
     
-    while(echo.get() == 0){};
+    while(echo.get() == 0 && i < 11000){i++;};
     timestamps[0] = hwlib::now_us();
+    i=0;
     
-    while(echo.get() == 1){};
+    while(echo.get() == 1 && i < 11000 ){i++;};
     timestamps[1] = hwlib::now_us();
+    i=0;
     
     trigger.set(0);
+
     long long int mm =(timestamps[1]-timestamps[0])/58;
     if(mm > 30) return 100;
     

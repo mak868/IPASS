@@ -34,7 +34,7 @@ void cPaddel::Reset(){
 /// @details
 /// update the position of the paddel on a screen of 64px height
 void cPaddel::update(){
-    y = inputcontroler.get()*0.64;    
+    y = inputcontroler.get()*0.50;    
 }
 /// @brief getX()
 /// @details

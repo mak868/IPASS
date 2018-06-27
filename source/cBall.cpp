@@ -14,7 +14,12 @@
 cBall::cBall(int posX, int posY):
     originalX(posX),
     originalY(posY)
-{}
+{
+    auto ramdom_output = hwlib::target::pin_adc( hwlib::target::ad_pins::a0 );
+\
+    hwlib::wait_ms(10);
+    srand(ramdom_output.get());
+}
 /// @brief Reset()
 /// @details
 /// It will reset the ball to its starting position
@@ -48,11 +53,10 @@ void cBall::changeDir(int newDir){
     direction = newDir;
 }
 
-/// @brief ramdomdir(char tresholdleft, tresholdRight)
+/// @brief ramdomdir(char range, mini)
 /// @details
 /// changing to a ramdom direction left or right.
-/// 1 a ramdom direction to the left
-/// 2 a ramdom direction to the right
+/// 
 ///
 ///@par example
 /// @code
@@ -60,10 +64,8 @@ void cBall::changeDir(int newDir){
 /// @endcode
 /// 
 
-void cBall::ramdomdir(char tresholdLeft, char tresholdRight){
-   
-    //direction = (rand() % tresholdLeft) + tresholdRight;
-    direction = tresholdLeft;
+void cBall::ramdomdir(char range , char mini){
+    direction = ((rand() % range) + mini);
 }
 /// @brief update()
 /// @details

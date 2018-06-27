@@ -24,7 +24,7 @@
 /// }
 /// @endcode
 /// 
-pongManger::pongManger(hwlib::glcd_oled  & oled, cBall & ball, cPaddel & player1, cPaddel & player2, piezo & sound):
+pongManger::pongManger(hwlib::glcd_oled_buffered  & oled, cBall & ball, cPaddel & player1, cPaddel & player2, piezo & sound):
     display(oled),
     ball(ball),
     player1(player1),
@@ -34,6 +34,12 @@ pongManger::pongManger(hwlib::glcd_oled  & oled, cBall & ball, cPaddel & player1
         ball.Reset();
         player1.Reset();
         player2.Reset();
+        this->Draw();
+//start up tune
+    int  notes[8]  = {'c','d','e','f','g','a','b','C'};
+    int  lenght[8] = {300,300,300,300,300,300,300,500};   
+    sound.song(notes,lenght,8);      
+
         ball.ramdomdir();
 }
 
@@ -45,7 +51,10 @@ pongManger::pongManger(hwlib::glcd_oled  & oled, cBall & ball, cPaddel & player1
 void pongManger::score(){
         ball.Reset();
         player1.Reset();
-        player2.Reset();    
+        player2.Reset(); 
+
+        hwlib::wait_ms(1000);
+        ball.ramdomdir(); 
 }
 
 /// @brief Draw()
@@ -71,17 +80,18 @@ void pongManger::Draw(){
         for(int j =0; j < widthLevel; j++){
           
             if(ballx == j && bally == i){
-                display.write( hwlib::location(j, i), hwlib::black );
+                display.write( hwlib::location(j, i), hwlib::black, hwlib::buffering::buffered );
             }
-            else if(player1x == j && (player1y <= i && (player1y+padelSize1) >= i)){
-                    display.write( hwlib::location(j, i), hwlib::black );
+            else if(player1x == j && (player1y <= i && (player1y+padelSize1) >= i)){ //paddel 1 drawing
+                display.write( hwlib::location(j, i), hwlib::black, hwlib::buffering::buffered );
             }
-            else if(player2x == j && (player2y <= i && (player2y+padelSize2) >= i)){
-                display.write( hwlib::location(j, i), hwlib::black );
+            else if(player2x == j && (player2y <= i && (player2y+padelSize2) >= i)){ //paddel 2 drawing
+                display.write( hwlib::location(j, i), hwlib::black, hwlib::buffering::buffered );
             } 
         }
         
     }
+    display.flush();
 }
 /// @brief Update()
 /// @details
@@ -118,8 +128,8 @@ void  pongManger::collision(){
     for(int i=0; i < padelSize1; i++){
         if(ballx == player1x+1){  
             if(bally == (player1y + i)){
-                ball.ramdomdir(5); 
-                sound.tone('b',100);
+                ball.ramdomdir(6,3); 
+                sound.tone('f',100);
             }
         }
     }
@@ -128,8 +138,8 @@ void  pongManger::collision(){
     for(int i=0; i < padelSize2; i++){
         if(ballx == player2x-1){  
             if(bally == (player2y + i)){
-                ball.ramdomdir(6,3); //needs to be ramdom
-                sound.tone('d',100);
+                ball.ramdomdir(3,1); //needs to be ramdom
+                sound.tone('g',100);
             }
         }
     }
@@ -138,14 +148,14 @@ void  pongManger::collision(){
     if(bally >= heightLevel-1){
         int newDir = (ball.getDir() == 6 ? 5:2);
         ball.changeDir(newDir);
-        sound.tone('g',100);
+        sound.tone('C',50);
     }
         
      // top wall
     if(bally <= 5){
         int newDir = (ball.getDir() == 5 ? 6:3);
         ball.changeDir(newDir);
-        sound.tone('C',100);
+        sound.tone('C',50);
     }
            
      // right wall
